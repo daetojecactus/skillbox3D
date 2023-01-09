@@ -1,0 +1,483 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    min-width: 320px;
+    font-family: "Roboto", sans-serif;
+    background-color: #fff;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto-Regular"),
+        url("../fonts/RobotoRegular.woff2") format("woff2"),
+        url("../fonts/RobotoRegular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto-Bold"),
+        url("../fonts/RobotoBold.woff2") format("woff2"),
+        url("../fonts/RobotoBold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*glob*/
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn {
+    position: relative;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    background-color: #3F2AFF;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #7B68EE;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: inherit;
+    border: 1px solid #3F2AFF;
+    outline: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn:focus::after {
+    opacity: 1;
+}
+
+.btn:active {
+    background-color: #4B0082;
+}
+
+
+/*header*/
+.header {
+    padding: 29px 0;
+    background: #3F2AFF;
+}
+
+.header__logo-link {
+    margin-right: auto;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+}
+
+.nav__item {
+    margin-right: 56px;
+}
+
+.nav__item:last-child {
+    margin-right: 0;
+}
+
+.nav__link {
+    position: relative;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav__link:focus {
+    outline-offset: 2px;
+    outline: 1px solid #71A7E2;
+}
+
+.nav__link:hover {
+    color: #7B68EE;
+}
+
+.nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #AFEEEE;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav__link:active {
+    color: #AFEEEE;
+    outline: none;
+}
+
+.nav__link:active::after {
+    opacity: 1;
+}
+
+.burger {
+    display: none;
+}
+
+/*hero*/
+.hero {
+    background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
+}
+
+.hero__container {
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.hero__content {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+.hero__title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 100%;
+    color: #fff;
+}
+
+.hero__image {
+    position: absolute;
+    right: 15px;
+    top: 3%;
+}
+
+
+.hero__descr {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #fff;
+    margin-bottom: 66px;
+}
+
+.hero__btn {
+    padding: 24px 81px;
+}
+
+/*advantages*/
+.advantages {
+    background-color: #fff;
+}
+
+.advantages__container {
+    margin-bottom: 76px;
+}
+
+.advantages__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: #2E2B44;
+}
+
+.advantages__descr {
+    margin: 0;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #666666;
+}
+
+.advantages__item-image--bg-1 {
+    background-image: url("../img/eye-circle.svg");
+}
+
+.advantages__item-image--bg-2 {
+    background-image: url("../img/fingers.svg");
+}
+
+.advantages__item-image--bg-3 {
+    background-image: url("../img/Attention.svg");
+}
+
+.advantages__item-image {
+    padding-top: 23px;
+    padding-right: 80px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+.advantages__item {
+    display: flex;
+    align-items: center;
+}
+
+.advantages__item-descr {
+    margin: 0;
+    padding: 16px 0 16px 30px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: #666666;
+}
+
+/*teachers*/
+.teachers {
+    background: #212133;
+}
+
+.teachers__container {
+    padding-top: 75px;
+    padding-bottom: 43px;
+}
+
+.teachers__title {
+    margin: 0;
+    margin-bottom: 23px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: #fff;
+}
+
+.teachers__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teachers__item {
+    margin-bottom: 30px;
+}
+
+.teachers__avatar {
+    border-radius: 25px 25px 0px 0px;
+    margin-bottom: 27px;
+    width: 100%;
+}
+
+.teachers__name {
+    margin: 0;
+    margin-bottom: 7px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: #fff;
+}
+
+.teachers__descr {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #85859B;
+}
+
+/*courses*/
+.courses {
+    background-color: #fff;
+}
+
+.courses__container {
+    margin-top: 74px;
+    margin-bottom: 48px;
+}
+
+.courses__content {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.courses__title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: #212133;
+}
+
+.courses__time {
+    position: absolute;
+    top: 13px;
+    right: 18px;
+    margin: 0;
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    background-image: url("../img/courses-time.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.courses__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.courses__item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 480px;
+    height: inherit;
+    background: #EDF0F9;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.courses__item--background1 {
+    background-image: url("../img/courses-1.jpg");
+}
+
+.courses__item--background2 {
+    background-image: url("../img/courses-2.jpg");
+}
+
+.courses__item--background3 {
+    background-image: url("../img/courses-3.jpg");
+}
+
+.courses__item--background4 {
+    background-image: url("../img/courses-4.jpg");
+}
+
+.courses__item-info {
+    padding: 211px 30px 120px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.courses__item-caption {
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: #212133;
+}
+
+.courses__item-descr {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #666666;
+}
+
+.courses__item-btn {
+    display: inline-block;
+    position: absolute;
+    padding: 20.5px 59px;
+    bottom: 30px;
+}
+
+/*footer*/
+.footer {
+    background-color: #212133;
+}
+
+.footer__container {
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.footer__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__item {
+    margin-right: 34px;
+}
+
+.footer__item:last-child {
+    margin-right: 0;
+}
+
+.footer__item-link svg {
+    fill: #fff;
+    transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+}
+
+.footer__item-link:hover svg {
+    fill: #7B68EE;
+}
+
+/*last*/
+.footer__last {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__last-descr {
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #2E2B44
+}
+
+.trademark {
+    color: #3F2AFF;
+}
